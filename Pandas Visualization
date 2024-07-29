@@ -1,0 +1,42 @@
+import pandas as  pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+df=pd.read_csv("mtcars2.csv")
+df
+
+df.shape
+# use of the info is  to use precise and concise information oabout the dataset
+# see thre is 32 rows using df.shape so if using info and we found less than 32 that means it has missing value
+df.info()
+
+ df.describe()
+
+df.count()
+df.min()
+
+# TO replcae the missing values in the qusec
+df.qsec.mean()
+
+
+df.fillna(df.qsec.mean())
+
+df.drop(columns=['am','vs'])
+
+# Index by position and label
+# iloc 
+df.iloc[:,:]
+
+# LOC me no N-1 and iloc me N-1
+df.loc[4:12,'Unnamed: 1']
+
+# Now to get specific column in the dataset usong LOC
+# DISP,HP,vs,am
+df.loc[:,["disp","hp","vs","am"]]
+
+df["kmpl"]=df["mpg"]*1.2
+df
+
+# SORTING
+df.sort_values(by='Unnamed: 1')
